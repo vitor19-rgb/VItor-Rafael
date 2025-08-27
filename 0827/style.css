@@ -1,0 +1,216 @@
+/* --- Importação de Fonte --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- NOVAS ANIMAÇÕES (KEYFRAMES) --- */
+/* Define a animação de "surgir de baixo para cima" */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Estilos Globais --- */
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* --- Contêiner Principal ATUALIZADO com animação --- */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px; /* Aumentamos o padding para mais respiro */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    /* Aplica a animação que definimos */
+    animation: fadeInUp 0.7s ease-out;
+}
+
+/* --- Títulos --- */
+h2, h3 {
+    color: #002d5b;
+    border-bottom: 1px solid #eef2f7;
+    padding-bottom: 15px;
+    margin-top: 0;
+}
+
+/* --- Formulário com Labels Flutuantes (ATUALIZADO) --- */
+.form-group {
+    position: relative; /* Essencial para o posicionamento da label */
+    margin-bottom: 25px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent; /* Garante que a label não fique escondida */
+    position: relative;
+    z-index: 1;
+}
+
+.form-group label {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    color: #888;
+    font-size: 1rem;
+    z-index: 0;
+    transition: all 0.2s ease-in-out; /* A mágica da animação da label! */
+    background-color: #fff;
+    padding: 0 4px;
+}
+
+/* O efeito acontece aqui! */
+/* Quando o input está focado ou preenchido, a label sobe e diminui */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 8px;
+    font-size: 0.8rem;
+    color: #007bff;
+    z-index: 2;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* --- Botão com Efeito Dinâmico (ATUALIZADO) --- */
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #003f82;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease-out, background-color 0.3s ease, box-shadow 0.2s ease-out; /* Transições suaves */
+}
+
+button:hover {
+    background-color: #002d5b;
+    transform: translateY(-3px); /* Efeito de "levantar" */
+    box-shadow: 0 4px 12px rgba(0, 45, 91, 0.2); /* Sombra sutil */
+}
+
+/* --- Tabela de Produtos com Efeito Dinâmico (ATUALIZADO) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eef2f7;
+}
+
+thead th {
+    background-color: #f8f9fa;
+    color: #002d5b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+/* Adicionamos transição para a linha da tabela */
+tbody tr {
+    transition: transform 0.2s ease-out, background-color 0.2s ease, box-shadow 0.2s ease-out;
+}
+
+/* Efeito de hover na linha */
+tbody tr:hover {
+    background-color: #fff; /* Fundo branco para destacar a sombra */
+    transform: translateY(-2px);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+    z-index: 10;
+    position: relative;
+}
+
+/* --- Seção de Total --- */
+h4 {
+    text-align: right;
+    font-size: 1.2rem;
+    color: #002d5b;
+    margin-top: 20px;
+}
+/* --- ESTILOS DA PÁGINA DE INTRODUÇÃO (LOADING PAGE) --- */
+/* Adicione este código no final do seu style.css */
+
+.intro-page {
+    /* Usa Flexbox para centralizar o conteúdo perfeitamente na tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Garante que a página ocupe a altura toda da tela */
+    /* Um gradiente sutil para um fundo mais interessante */
+    background: #f0f2f5 linear-gradient(135deg, #eef2f7 0%, #f0f2f5 100%);
+}
+
+.intro-container {
+    text-align: center;
+    max-width: 600px;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    /* Aplica a mesma animação de entrada que já tínhamos */
+    animation: fadeInUp 0.7s ease-out;
+}
+
+.intro-icon {
+    margin-bottom: 20px;
+    color: #003f82; /* Cor principal do nosso tema */
+}
+
+.intro-container h1 {
+    color: #002d5b;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.intro-container p {
+    font-size: 1.1rem;
+    color: #667;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn-acessar {
+    display: inline-block; /* Necessário para aplicar padding e outros estilos de bloco */
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    padding: 15px 35px;
+    border-radius: 5px;
+    background-color: #003f82;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.2s ease-out, background-color 0.3s ease, box-shadow 0.2s ease-out;
+}
+
+.btn-acessar:hover {
+    background-color: #002d5b;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 45, 91, 0.2);
+}
