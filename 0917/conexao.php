@@ -1,9 +1,9 @@
 <?php
 // Arquivo responsável por conectar ao banco de dados
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "cadastro_simples";
+$host = "sql210.infinityfree.com";
+$user = "if0_39973045";
+$pass = "r0NDHwbg8vtW";
+$db = "if0_39973045_cadastro_simples";
 
 // Cria conexão
 $conn = new mysqli($host, $user, $pass, $db);
